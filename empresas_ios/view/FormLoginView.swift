@@ -14,9 +14,9 @@ struct FormLoginView: View {
     @State var showingDetail = false
     @State var hidde = false
     @State var invalidCredentials = false
+    @State var userDataLogin: [String : String] = [:]
     
     let auth = AuthenticationService()
-    @State var userDataLogin: [String : String] = [:]
     
     var body: some View {
         
@@ -153,13 +153,10 @@ struct FormLoginView: View {
                         } else {
                             showingDetail.toggle()
                             
-                            print(userDataLogin["token"] ?? "")
-                            
                             user.uid = userDataLogin["uid"] ?? ""
                             user.token = userDataLogin["token"] ?? ""
                             user.client = userDataLogin["client"] ?? ""
                             
-                            print(user)
                         }
                     }
                 }

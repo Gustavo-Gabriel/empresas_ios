@@ -14,7 +14,7 @@ struct SearchView: View {
     
     var body: some View {
         
-        var enterprise = [Enterprise]()
+        var enterprises = loadEnterprises(user: user)
         
         VStack{
             Image("background")

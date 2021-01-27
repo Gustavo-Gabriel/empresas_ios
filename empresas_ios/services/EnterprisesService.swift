@@ -50,3 +50,19 @@ class EnterpriseService {
         dataTask.resume()
     }
 }
+
+func loadEnterprises(user: User) -> [Enterprise]{
+    var enterprises = [Enterprise]()
+    let enterpriseService = EnterpriseService()
+    
+    enterpriseService.get(token: user.token, client: user.client, uid: user.uid) { (enterprise) in
+        
+        DispatchQueue.main.async {
+            enterprises = enterprise
+            print("Enterprises: \(enterprises[0].country)")
+        }
+    }
+    
+    return enterprises
+}
+
