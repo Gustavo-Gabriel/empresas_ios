@@ -9,13 +9,11 @@ import SwiftUI
 
 struct SearchView: View {
     
+    @State var enterprises = [Enterprise]()
     @Binding var text: String
     var user: User
     
     var body: some View {
-        
-        var enterprises = loadEnterprises(user: user)
-        
         VStack{
             Image("background")
                 .resizable()
@@ -23,7 +21,6 @@ struct SearchView: View {
                 .frame(height: 188)
             
             HStack {
-                
                 TextField("Pesquise por empresa", text: $text)
                     .frame(height: 48)
                     .cornerRadius(4)
@@ -43,7 +40,7 @@ struct SearchView: View {
             
             
             HStack{
-                Text("04 resultado encontrados")
+                Text("\(enterprises.count) resultados encontrados")
                     .font(.custom("Rubik-Regular", size: 14))
                     .foregroundColor(Color(labelLoginColor))
                     .padding()
@@ -51,63 +48,35 @@ struct SearchView: View {
                 Spacer()
             }
             
-            ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false){
-                HStack{
-                    Rectangle()
-                        .frame(height: 120)
-                        .cornerRadius(4)
-                        .foregroundColor(Color(enterpriseFirstColor))
-                        .overlay(
-                            Text(user.uid)
-                                .foregroundColor(.white)
-                                .font(.custom("Rubik-Regular", size: 18))
-                        )
-                    
-                }.padding(.horizontal)
+            List(enterprises, id:\.self) { enterprise in
                 
-                HStack{
-                    Rectangle()
-                        .frame(height: 120)
-                        .cornerRadius(4)
-                        .foregroundColor(Color(enterpriseFirstColor))
-                        .overlay(
-                            Text("Empresa X")
-                                .foregroundColor(.white)
-                                .font(.custom("Rubik-Regular", size: 18))
-                        )
-                    
-                }.padding(.horizontal)
-                
-                HStack{
-                    Rectangle()
-                        .frame(height: 120)
-                        .cornerRadius(4)
-                        .foregroundColor(Color(enterpriseFirstColor))
-                        .overlay(
-                            Text("Empresa X")
-                                .foregroundColor(.white)
-                                .font(.custom("Rubik-Regular", size: 18))
-                        )
-                    
-                }.padding(.horizontal)
-                
-                HStack{
-                    Rectangle()
-                        .frame(height: 120)
-                        .cornerRadius(4)
-                        .foregroundColor(Color(enterpriseFirstColor))
-                        .overlay(
-                            Text("Empresa X")
-                                .foregroundColor(.white)
-                                .font(.custom("Rubik-Regular", size: 18))
-                        )
-                    
-                }.padding(.horizontal)
-            }
+                Rectangle()
+                    .frame(height: 120)
+                    .cornerRadius(4)
+                    .foregroundColor(Color(enterpriseFirstColor))
+                    .overlay(
+                        Text(enterprise.enterprise_name)
+                            .foregroundColor(.white)
+                            .font(.custom("Rubik-Regular", size: 18))
+                    )
+            }.padding(.horizontal)
+        }.onAppear(perform: loadData)
+        
+        Spacer()
+        
+    }
+    
+    func loadData(){
+        
+        let enterpriseService = EnterpriseService()
+        
+        enterpriseService.get(token: user.token, client: user.client, uid: user.uid) { (enterprises) in
             
-            Spacer()
-
+            DispatchQueue.main.async {
+                self.enterprises = enterprises
+            }
         }
+        
     }
 }
 

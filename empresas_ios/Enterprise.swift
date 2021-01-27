@@ -11,7 +11,7 @@ struct EnterpriseList: Codable {
     public var enterprises: [Enterprise]
 }
 
-struct Enterprise: Codable {
+struct Enterprise: Codable, Hashable {
     public var email_enterprise: String?
     public var facebook: String?
     public var twitter: String?
@@ -25,7 +25,7 @@ struct Enterprise: Codable {
     public var country: String
     public var value: Int
     public var share_price: Double
-    public var enterprise_type: EnterpriseType
+//    public var enterprise_type: EnterpriseType
 }
 
 struct EnterpriseType: Codable {
