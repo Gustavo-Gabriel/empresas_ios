@@ -13,6 +13,9 @@
 		F158572525C09A7E00E54A90 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F158572425C09A7E00E54A90 /* Preview Assets.xcassets */; };
 		F158573025C09A7F00E54A90 /* empresas_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158572F25C09A7F00E54A90 /* empresas_iosTests.swift */; };
 		F158573B25C09A7F00E54A90 /* empresas_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158573A25C09A7F00E54A90 /* empresas_iosUITests.swift */; };
+		F158574C25C0BAAB00E54A90 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158574B25C0BAAB00E54A90 /* Colors.swift */; };
+		F158575325C0CB7700E54A90 /* NewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158575225C0CB7700E54A90 /* NewView.swift */; };
+		F1B3D3F925C0E73A0097DD83 /* ExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B3D3F825C0E73A0097DD83 /* ExtensionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,9 @@
 		F158573625C09A7F00E54A90 /* empresas_iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = empresas_iosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F158573A25C09A7F00E54A90 /* empresas_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = empresas_iosUITests.swift; sourceTree = "<group>"; };
 		F158573C25C09A7F00E54A90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F158574B25C0BAAB00E54A90 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		F158575225C0CB7700E54A90 /* NewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewView.swift; sourceTree = "<group>"; };
+		F1B3D3F825C0E73A0097DD83 /* ExtensionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,11 +101,13 @@
 		F158571C25C09A7E00E54A90 /* empresas_ios */ = {
 			isa = PBXGroup;
 			children = (
+				F1B3D3F725C0E7280097DD83 /* extensions */,
+				F158575125C0CB5F00E54A90 /* view */,
 				F158571D25C09A7E00E54A90 /* empresas_iosApp.swift */,
-				F158571F25C09A7E00E54A90 /* ContentView.swift */,
 				F158572125C09A7E00E54A90 /* Assets.xcassets */,
 				F158572625C09A7E00E54A90 /* Info.plist */,
 				F158572325C09A7E00E54A90 /* Preview Content */,
+				F158574B25C0BAAB00E54A90 /* Colors.swift */,
 			);
 			path = empresas_ios;
 			sourceTree = "<group>";
@@ -128,6 +136,23 @@
 				F158573C25C09A7F00E54A90 /* Info.plist */,
 			);
 			path = empresas_iosUITests;
+			sourceTree = "<group>";
+		};
+		F158575125C0CB5F00E54A90 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F158571F25C09A7E00E54A90 /* ContentView.swift */,
+				F158575225C0CB7700E54A90 /* NewView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		F1B3D3F725C0E7280097DD83 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F1B3D3F825C0E73A0097DD83 /* ExtensionView.swift */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +285,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F158572025C09A7E00E54A90 /* ContentView.swift in Sources */,
+				F1B3D3F925C0E73A0097DD83 /* ExtensionView.swift in Sources */,
+				F158575325C0CB7700E54A90 /* NewView.swift in Sources */,
+				F158574C25C0BAAB00E54A90 /* Colors.swift in Sources */,
 				F158571E25C09A7E00E54A90 /* empresas_iosApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
