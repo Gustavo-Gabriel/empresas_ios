@@ -15,7 +15,6 @@ struct FormLoginView: View {
     @State var hidde = false
     @State var invalidCredentials = false
     
-    
     var body: some View {
         
         let auth = AuthenticationService()
@@ -47,11 +46,7 @@ struct FormLoginView: View {
                     .padding(.horizontal)
                     .padding(.vertical, -10)
                     .overlay(
-                        Rectangle()
-                            .stroke(Color.red, lineWidth: 1)
-                            .frame(height: 48)
-                            .padding(.horizontal)
-                        
+                        BorderTextFieldView()
                     )
             }
             
@@ -87,13 +82,8 @@ struct FormLoginView: View {
                                 .padding(.horizontal)
                                 .padding(.vertical, -10)
                                 .overlay(
-                                    Rectangle()
-                                        .stroke(Color.red, lineWidth: 1)
-                                        .frame(height: 48)
-                                        .padding(.horizontal)
-                                    
+                                    BorderTextFieldView()
                                 )
-                            
                         }
                         
                         
@@ -113,10 +103,7 @@ struct FormLoginView: View {
                                 .padding(.horizontal)
                                 .padding(.vertical, -10)
                                 .overlay(
-                                    Rectangle()
-                                        .stroke(Color.red, lineWidth: 1)
-                                        .frame(height: 48)
-                                        .padding(.horizontal)
+                                    BorderTextFieldView()
                                     
                                 )
                         }
@@ -159,8 +146,6 @@ struct FormLoginView: View {
                 
                 auth.login(email: email, password: password) { (headerAccess) in
                     
-                    
-                    
                     DispatchQueue.main.async {
                         userDataLogin = headerAccess
                         
@@ -171,8 +156,6 @@ struct FormLoginView: View {
                         }
                         
                     }
-                    
-                    
                 }
                 
             }){
@@ -202,5 +185,3 @@ struct FormLoginView_Previews: PreviewProvider {
         FormLoginView()
     }
 }
-
-

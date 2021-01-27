@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct NewView: View {
+    
     var body: some View {
         
-        NavigationView{
-            Text("Helllo!")
-        }.navigationBarHidden(true)
+        Text("PEgou")
         
     }
 }

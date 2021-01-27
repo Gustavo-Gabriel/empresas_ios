@@ -12,6 +12,7 @@
 		F151314F25C19AAA003E4F2F /* HeaderLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151314E25C19AAA003E4F2F /* HeaderLoginView.swift */; };
 		F151315825C19B38003E4F2F /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151315725C19B38003E4F2F /* AuthenticationService.swift */; };
 		F151316025C19B8A003E4F2F /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151315F25C19B8A003E4F2F /* URL.swift */; };
+		F151317225C1C18E003E4F2F /* BorderTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151317125C1C18E003E4F2F /* BorderTextFieldView.swift */; };
 		F158571E25C09A7E00E54A90 /* empresas_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158571D25C09A7E00E54A90 /* empresas_iosApp.swift */; };
 		F158572025C09A7E00E54A90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158571F25C09A7E00E54A90 /* ContentView.swift */; };
 		F158572225C09A7E00E54A90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F158572125C09A7E00E54A90 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		F151314E25C19AAA003E4F2F /* HeaderLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLoginView.swift; sourceTree = "<group>"; };
 		F151315725C19B38003E4F2F /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		F151315F25C19B8A003E4F2F /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		F151317125C1C18E003E4F2F /* BorderTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderTextFieldView.swift; sourceTree = "<group>"; };
 		F158571A25C09A7E00E54A90 /* empresas_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = empresas_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F158571D25C09A7E00E54A90 /* empresas_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = empresas_iosApp.swift; sourceTree = "<group>"; };
 		F158571F25C09A7E00E54A90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,6 +95,15 @@
 				F151315F25C19B8A003E4F2F /* URL.swift */,
 			);
 			path = services;
+			sourceTree = "<group>";
+		};
+		F151317025C1C15E003E4F2F /* view_util */ = {
+			isa = PBXGroup;
+			children = (
+				F151314425C198EE003E4F2F /* CurvedSideRectangle.swift */,
+				F151317125C1C18E003E4F2F /* BorderTextFieldView.swift */,
+			);
+			path = view_util;
 			sourceTree = "<group>";
 		};
 		F158571125C09A7E00E54A90 = {
@@ -157,10 +168,10 @@
 		F158575125C0CB5F00E54A90 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				F151317025C1C15E003E4F2F /* view_util */,
 				F158571D25C09A7E00E54A90 /* empresas_iosApp.swift */,
 				F158571F25C09A7E00E54A90 /* ContentView.swift */,
 				F158575225C0CB7700E54A90 /* NewView.swift */,
-				F151314425C198EE003E4F2F /* CurvedSideRectangle.swift */,
 				F151314925C1995B003E4F2F /* FormLoginView.swift */,
 				F151314E25C19AAA003E4F2F /* HeaderLoginView.swift */,
 			);
@@ -302,6 +313,7 @@
 				F158575325C0CB7700E54A90 /* NewView.swift in Sources */,
 				F158574C25C0BAAB00E54A90 /* Colors.swift in Sources */,
 				F151314F25C19AAA003E4F2F /* HeaderLoginView.swift in Sources */,
+				F151317225C1C18E003E4F2F /* BorderTextFieldView.swift in Sources */,
 				F151314A25C1995B003E4F2F /* FormLoginView.swift in Sources */,
 				F158571E25C09A7E00E54A90 /* empresas_iosApp.swift in Sources */,
 				F151315825C19B38003E4F2F /* AuthenticationService.swift in Sources */,
