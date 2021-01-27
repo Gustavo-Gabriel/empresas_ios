@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F151314525C198EE003E4F2F /* CurvedSideRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151314425C198EE003E4F2F /* CurvedSideRectangle.swift */; };
+		F151314A25C1995B003E4F2F /* FormLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151314925C1995B003E4F2F /* FormLoginView.swift */; };
+		F151314F25C19AAA003E4F2F /* HeaderLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151314E25C19AAA003E4F2F /* HeaderLoginView.swift */; };
+		F151315825C19B38003E4F2F /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151315725C19B38003E4F2F /* AuthenticationService.swift */; };
+		F151316025C19B8A003E4F2F /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F151315F25C19B8A003E4F2F /* URL.swift */; };
 		F158571E25C09A7E00E54A90 /* empresas_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158571D25C09A7E00E54A90 /* empresas_iosApp.swift */; };
 		F158572025C09A7E00E54A90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158571F25C09A7E00E54A90 /* ContentView.swift */; };
 		F158572225C09A7E00E54A90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F158572125C09A7E00E54A90 /* Assets.xcassets */; };
@@ -15,7 +20,6 @@
 		F158573B25C09A7F00E54A90 /* empresas_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158573A25C09A7F00E54A90 /* empresas_iosUITests.swift */; };
 		F158574C25C0BAAB00E54A90 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158574B25C0BAAB00E54A90 /* Colors.swift */; };
 		F158575325C0CB7700E54A90 /* NewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158575225C0CB7700E54A90 /* NewView.swift */; };
-		F1B3D3F925C0E73A0097DD83 /* ExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B3D3F825C0E73A0097DD83 /* ExtensionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F151314425C198EE003E4F2F /* CurvedSideRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedSideRectangle.swift; sourceTree = "<group>"; };
+		F151314925C1995B003E4F2F /* FormLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormLoginView.swift; sourceTree = "<group>"; };
+		F151314E25C19AAA003E4F2F /* HeaderLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLoginView.swift; sourceTree = "<group>"; };
+		F151315725C19B38003E4F2F /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		F151315F25C19B8A003E4F2F /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		F158571A25C09A7E00E54A90 /* empresas_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = empresas_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F158571D25C09A7E00E54A90 /* empresas_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = empresas_iosApp.swift; sourceTree = "<group>"; };
 		F158571F25C09A7E00E54A90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,7 +59,6 @@
 		F158573C25C09A7F00E54A90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F158574B25C0BAAB00E54A90 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		F158575225C0CB7700E54A90 /* NewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewView.swift; sourceTree = "<group>"; };
-		F1B3D3F825C0E73A0097DD83 /* ExtensionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F151315625C19B21003E4F2F /* services */ = {
+			isa = PBXGroup;
+			children = (
+				F151315725C19B38003E4F2F /* AuthenticationService.swift */,
+				F151315F25C19B8A003E4F2F /* URL.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
 		F158571125C09A7E00E54A90 = {
 			isa = PBXGroup;
 			children = (
@@ -101,13 +118,12 @@
 		F158571C25C09A7E00E54A90 /* empresas_ios */ = {
 			isa = PBXGroup;
 			children = (
-				F1B3D3F725C0E7280097DD83 /* extensions */,
+				F151315625C19B21003E4F2F /* services */,
+				F158574B25C0BAAB00E54A90 /* Colors.swift */,
 				F158575125C0CB5F00E54A90 /* view */,
-				F158571D25C09A7E00E54A90 /* empresas_iosApp.swift */,
 				F158572125C09A7E00E54A90 /* Assets.xcassets */,
 				F158572625C09A7E00E54A90 /* Info.plist */,
 				F158572325C09A7E00E54A90 /* Preview Content */,
-				F158574B25C0BAAB00E54A90 /* Colors.swift */,
 			);
 			path = empresas_ios;
 			sourceTree = "<group>";
@@ -141,18 +157,14 @@
 		F158575125C0CB5F00E54A90 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				F158571D25C09A7E00E54A90 /* empresas_iosApp.swift */,
 				F158571F25C09A7E00E54A90 /* ContentView.swift */,
 				F158575225C0CB7700E54A90 /* NewView.swift */,
+				F151314425C198EE003E4F2F /* CurvedSideRectangle.swift */,
+				F151314925C1995B003E4F2F /* FormLoginView.swift */,
+				F151314E25C19AAA003E4F2F /* HeaderLoginView.swift */,
 			);
 			path = view;
-			sourceTree = "<group>";
-		};
-		F1B3D3F725C0E7280097DD83 /* extensions */ = {
-			isa = PBXGroup;
-			children = (
-				F1B3D3F825C0E73A0097DD83 /* ExtensionView.swift */,
-			);
-			path = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,10 +297,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F158572025C09A7E00E54A90 /* ContentView.swift in Sources */,
-				F1B3D3F925C0E73A0097DD83 /* ExtensionView.swift in Sources */,
+				F151316025C19B8A003E4F2F /* URL.swift in Sources */,
+				F151314525C198EE003E4F2F /* CurvedSideRectangle.swift in Sources */,
 				F158575325C0CB7700E54A90 /* NewView.swift in Sources */,
 				F158574C25C0BAAB00E54A90 /* Colors.swift in Sources */,
+				F151314F25C19AAA003E4F2F /* HeaderLoginView.swift in Sources */,
+				F151314A25C1995B003E4F2F /* FormLoginView.swift in Sources */,
 				F158571E25C09A7E00E54A90 /* empresas_iosApp.swift in Sources */,
+				F151315825C19B38003E4F2F /* AuthenticationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
