@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct SearchView: View {
-    
-    @State var enterprises = [Enterprise]()
-    @Binding var text: String
+
     var user: User
+    @State var enterprises = [Enterprise]()
+    @State var text: String = ""
     
     var body: some View {
         VStack{
@@ -40,7 +40,7 @@ struct SearchView: View {
             
             
             HStack{
-                Text("\(enterprises.count) resultados encontrados")
+                Text("\(enterprises.filter({"\($0)".contains(text) || text.isEmpty}).count) resultados encontrados")
                     .font(.custom("Rubik-Regular", size: 14))
                     .foregroundColor(Color(labelLoginColor))
                     .padding()
@@ -48,22 +48,27 @@ struct SearchView: View {
                 Spacer()
             }
             
-            List(enterprises, id:\.self) { enterprise in
-                
-                Rectangle()
-                    .frame(height: 120)
-                    .cornerRadius(4)
-                    .foregroundColor(Color(enterpriseFirstColor))
-                    .overlay(
-                        Text(enterprise.enterprise_name)
-                            .foregroundColor(.white)
-                            .font(.custom("Rubik-Regular", size: 18))
-                    )
-            }.padding(.horizontal)
-        }.onAppear(perform: loadData)
-        
-        Spacer()
-        
+            
+            List{
+                ForEach(enterprises.filter({"\($0)".contains(text) || text.isEmpty}), id: \.self){ enterprise in
+                    
+                    Rectangle()
+                        .frame(height: 120)
+                        .cornerRadius(4)
+                        .foregroundColor(Color(enterpriseFirstColor))
+                        .overlay(
+                            Text(enterprise.enterprise_name)
+                                .foregroundColor(.white)
+                                .font(.custom("Rubik-Regular", size: 18))
+                        )
+                        .padding(.horizontal)
+                }
+            }.onAppear(perform: loadData)
+            
+            Spacer()
+            
+        }
+
     }
     
     func loadData(){
@@ -82,6 +87,6 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView(text: .constant(""), user: User(uid: "", token: "", client: ""))
+        SearchView(user: User(uid: "", token: "", client: ""))
     }
 }

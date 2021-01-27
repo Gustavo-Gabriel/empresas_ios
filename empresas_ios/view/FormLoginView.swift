@@ -177,7 +177,7 @@ struct FormLoginView: View {
                     .padding()
                 
             }.fullScreenCover(isPresented: self.$showingDetail, content: {
-                SearchView(text: .constant(""), user: user)
+                SearchView(user: user)
             })
             
             
