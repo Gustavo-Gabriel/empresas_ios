@@ -38,16 +38,11 @@ class AuthenticationService{
                     let clientResponse = httpResponse.value(forHTTPHeaderField: "client")
                     let uidResponse = httpResponse.value(forHTTPHeaderField: "uid")
                     
-                    print("token : \(tokenResponse!), client : \(clientResponse!), uid: \(uidResponse!)")
-                    print(userDict)
+                    //print("token : \(tokenResponse!), client : \(clientResponse!), uid: \(uidResponse!)")
+                    //print(userDict)
                     
-                    completation([
-                        
-                        "token" : String(tokenResponse!),
-                        "client" : String(clientResponse!),
-                        "uid" : String(uidResponse!)
-                    ])
-                    
+                    completation(["token" : tokenResponse!, "client" : clientResponse!, "uid": uidResponse!])
+                                        
                 }else{
                     completation([:])
                     return

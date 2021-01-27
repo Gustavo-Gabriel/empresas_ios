@@ -15,10 +15,12 @@ struct FormLoginView: View {
     @State var hidde = false
     @State var invalidCredentials = false
     
+    let auth = AuthenticationService()
+    @State var userDataLogin: [String : String] = [:]
+    
     var body: some View {
         
-        let auth = AuthenticationService()
-        var userDataLogin: [String: String] = [:]
+        var user = User(uid: "", token: "", client: "")
         
         Group{
             HStack{
@@ -142,23 +144,29 @@ struct FormLoginView: View {
             
             Button(action: {
                 
-                
-                
-                auth.login(email: email, password: password) { (headerAccess) in
-                    
+                auth.login(email: email, password: password) { [self](headerAccess) in
                     DispatchQueue.main.async {
                         userDataLogin = headerAccess
                         
                         if userDataLogin == [:] {
-                            self.invalidCredentials = true
-                        }else{
-                            self.showingDetail.toggle()
+                            invalidCredentials = true
+                        } else {
+                            showingDetail.toggle()
+                            
+                            print(userDataLogin["token"] ?? "")
+                            
+                            user.uid = userDataLogin["uid"] ?? ""
+                            user.token = userDataLogin["token"] ?? ""
+                            user.client = userDataLogin["client"] ?? ""
+                            
+                            print(user)
                         }
-                        
                     }
                 }
                 
             }){
+                
+                
                 
                 Rectangle()
                     .frame(height: 48)
@@ -172,7 +180,7 @@ struct FormLoginView: View {
                     .padding()
                 
             }.fullScreenCover(isPresented: self.$showingDetail, content: {
-                NewView()
+                SearchView(text: .constant(""), user: user)
             })
             
             

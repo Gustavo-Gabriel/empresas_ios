@@ -8,3 +8,4 @@
 import Foundation
 
 public let urlAuthentication = URL(string: "https://empresas.ioasys.com.br/api/v1/users/auth/sign_in")!
+public let urlEnterprises = URL(string: "https://empresas.ioasys.com.br/api/v1/enterprises")!
