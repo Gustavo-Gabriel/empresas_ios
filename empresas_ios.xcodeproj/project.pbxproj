@@ -28,6 +28,7 @@
 		F158574C25C0BAAB00E54A90 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158574B25C0BAAB00E54A90 /* Colors.swift */; };
 		F158575325C0CB7700E54A90 /* NewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158575225C0CB7700E54A90 /* NewView.swift */; };
 		F16C979E25C2EC6E00F0C2A6 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C979D25C2EC6E00F0C2A6 /* SplashScreenView.swift */; };
+		F16C97A325C2F51500F0C2A6 /* BackgroundSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C97A225C2F51500F0C2A6 /* BackgroundSearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		F158574B25C0BAAB00E54A90 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		F158575225C0CB7700E54A90 /* NewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewView.swift; sourceTree = "<group>"; };
 		F16C979D25C2EC6E00F0C2A6 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		F16C97A225C2F51500F0C2A6 /* BackgroundSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				F151314425C198EE003E4F2F /* CurvedSideRectangle.swift */,
 				F151317125C1C18E003E4F2F /* BorderTextFieldView.swift */,
 				F144803F25C23AF40041AC5B /* EnterpriseView.swift */,
+				F16C97A225C2F51500F0C2A6 /* BackgroundSearchView.swift */,
 			);
 			path = view_util;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				F151314A25C1995B003E4F2F /* FormLoginView.swift in Sources */,
 				F144804025C23AF40041AC5B /* EnterpriseView.swift in Sources */,
 				F144803B25C23A910041AC5B /* DetailsView.swift in Sources */,
+				F16C97A325C2F51500F0C2A6 /* BackgroundSearchView.swift in Sources */,
 				F158571E25C09A7E00E54A90 /* empresas_iosApp.swift in Sources */,
 				F151315825C19B38003E4F2F /* AuthenticationService.swift in Sources */,
 				F144801725C1E5F30041AC5B /* SearchView.swift in Sources */,

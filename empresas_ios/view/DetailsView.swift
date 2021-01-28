@@ -12,6 +12,19 @@ struct DetailsView: View {
     var enterpriseName: String
     var description: String
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
+        var btnBack : some View { Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+            }) {
+                HStack {
+                Image(systemName: "arrow.left")
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundColor(Color("backButtonColor"))
+                }.frame(width: 40, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            }
+        }
+
     var body: some View {
         
         VStack{
@@ -26,7 +39,10 @@ struct DetailsView: View {
             
             
             Spacer()
-        }.navigationBarTitle(enterpriseName, displayMode: .inline)
+        }
+        .navigationBarTitle(enterpriseName, displayMode: .inline)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: btnBack)
     }
 }
 

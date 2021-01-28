@@ -11,37 +11,43 @@ struct SearchView: View {
     
     var user: User
     @State var enterprises = [Enterprise]()
-    @State var text: String = ""
+    @State var textSearch: String = ""
+    @State private var isEditing = false
     
     var body: some View {
         
+        
         NavigationView{
             VStack{
-                Image("background")
-                    .resizable()
-                    .edgesIgnoringSafeArea(.top)
-                    .frame(height: 188)
+                
+                if isEditing{
+                    BackgroundSearchView(height: 67)
+                }else{
+                    BackgroundSearchView(height: 188)
+                }
                 
                 HStack {
-                    TextField("Pesquise por empresa", text: $text)
-                        .frame(height: 48)
-                        .cornerRadius(4)
-                        .padding(.horizontal, 46)
-                        .background(Color(.systemGray6))
-                        .font(.custom("Rubik-Regular", size: 18))
-                        
-                        .overlay(
-                            Image(systemName: "magnifyingglass")
-                                .foregroundColor(.gray)
-                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                                .padding(.leading, 16)
-                        )
+                    TextField("Pesquise por empresa", text: $textSearch){
+                        isEditing in
+                        self.isEditing = true
+                    }
+                    .frame(height: 48)
+                    .cornerRadius(4)
+                    .padding(.horizontal, 46)
+                    .background(Color(.systemGray6))
+                    .font(.custom("Rubik-Regular", size: 18))
+                    .overlay(
+                        Image(systemName: "magnifyingglass")
+                            .foregroundColor(.gray)
+                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                            .padding(.leading, 16)
+                    )
                 }
                 .onAppear(perform: loadData)
                 .padding(.horizontal, 16)
                 .padding(.top, -30)
                 
-                if enterprises.filter({"\($0)".contains(text) || text.isEmpty}).count == 0{
+                if enterprises.filter({"\($0)".contains(textSearch) || textSearch.isEmpty}).count == 0{
                     
                     Spacer()
                     
@@ -51,7 +57,7 @@ struct SearchView: View {
                     
                 }else{
                     HStack{
-                        Text("\(enterprises.filter({"\($0.enterprise_name)".contains(text) || text.isEmpty}).count) resultados encontrados")
+                        Text("\(enterprises.filter({"\($0.enterprise_name)".contains(textSearch) || textSearch.isEmpty}).count) resultados encontrados")
                             .font(.custom("Rubik-Regular", size: 14))
                             .foregroundColor(Color(labelLoginColor))
                             .padding()
@@ -61,7 +67,7 @@ struct SearchView: View {
                     
                     
                     List{
-                        ForEach(enterprises.filter({"\($0.enterprise_name)".contains(text) || text.isEmpty}), id: \.self){ enterprise in
+                        ForEach(enterprises.filter({"\($0.enterprise_name)".contains(textSearch) || textSearch.isEmpty}), id: \.self){ enterprise in
                             
                             NavigationLink(destination: DetailsView(enterpriseName: enterprise.enterprise_name, description: enterprise.description)) {
                                 EnterpriseView(enterpriseName: enterprise.enterprise_name)
@@ -75,11 +81,8 @@ struct SearchView: View {
                     
                 }
                 
-                
                 Spacer()
-                
             }
-            
             .navigationBarHidden(true)
         }
     }
@@ -95,6 +98,7 @@ struct SearchView: View {
                 self.enterprises = enterprises
             }
         }
+        
         
     }
 }
