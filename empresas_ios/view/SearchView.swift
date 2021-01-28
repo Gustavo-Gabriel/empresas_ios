@@ -63,17 +63,8 @@ struct SearchView: View {
                     List{
                         ForEach(enterprises.filter({"\($0.enterprise_name)".contains(text) || text.isEmpty}), id: \.self){ enterprise in
                             
-                            NavigationLink(destination: NewView()) {
-                                
-                                Rectangle()
-                                    .frame(height: 120)
-                                    .cornerRadius(4)
-                                    .foregroundColor(Color(enterpriseFirstColor))
-                                    .overlay(
-                                        Text(enterprise.enterprise_name)
-                                            .foregroundColor(.white)
-                                            .font(.custom("Rubik-Regular", size: 18))
-                                    )
+                            NavigationLink(destination: DetailsView(enterpriseName: enterprise.enterprise_name, description: enterprise.description)) {
+                                EnterpriseView(enterpriseName: enterprise.enterprise_name)
                                     .padding(.horizontal)
                             }.padding(.trailing, -24.0)
                             
