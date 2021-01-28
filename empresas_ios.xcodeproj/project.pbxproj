@@ -27,6 +27,7 @@
 		F158573B25C09A7F00E54A90 /* empresas_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158573A25C09A7F00E54A90 /* empresas_iosUITests.swift */; };
 		F158574C25C0BAAB00E54A90 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158574B25C0BAAB00E54A90 /* Colors.swift */; };
 		F158575325C0CB7700E54A90 /* NewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158575225C0CB7700E54A90 /* NewView.swift */; };
+		F16C979E25C2EC6E00F0C2A6 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C979D25C2EC6E00F0C2A6 /* SplashScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		F158573C25C09A7F00E54A90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F158574B25C0BAAB00E54A90 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		F158575225C0CB7700E54A90 /* NewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewView.swift; sourceTree = "<group>"; };
+		F16C979D25C2EC6E00F0C2A6 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 				F151314E25C19AAA003E4F2F /* HeaderLoginView.swift */,
 				F144801625C1E5F30041AC5B /* SearchView.swift */,
 				F144803A25C23A910041AC5B /* DetailsView.swift */,
+				F16C979D25C2EC6E00F0C2A6 /* SplashScreenView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F16C979E25C2EC6E00F0C2A6 /* SplashScreenView.swift in Sources */,
 				F158572025C09A7E00E54A90 /* ContentView.swift in Sources */,
 				F144802E25C1F3D50041AC5B /* EnterprisesService.swift in Sources */,
 				F151316025C19B8A003E4F2F /* URL.swift in Sources */,

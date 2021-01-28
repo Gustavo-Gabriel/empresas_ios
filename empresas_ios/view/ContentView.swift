@@ -9,11 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State var isActive: Bool = false
+    
     var body: some View {
         VStack{
-            HeaderViewLogin()
-            FormLoginView()
-            Spacer()
+            
+            if self.isActive{
+                HeaderViewLogin()
+                FormLoginView()
+                Spacer()
+            }else{
+                SplashScreenView()
+            }
+        }
+        .onAppear{
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5){
+                
+                withAnimation{
+                    self.isActive = true
+                }
+            }
         }
     }
 }
