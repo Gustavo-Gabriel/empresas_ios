@@ -8,68 +8,91 @@
 import SwiftUI
 
 struct SearchView: View {
-
+    
     var user: User
     @State var enterprises = [Enterprise]()
     @State var text: String = ""
     
     var body: some View {
-        VStack{
-            Image("background")
-                .resizable()
-                .edgesIgnoringSafeArea(.top)
-                .frame(height: 188)
-            
-            HStack {
-                TextField("Pesquise por empresa", text: $text)
-                    .frame(height: 48)
-                    .cornerRadius(4)
-                    .padding(.horizontal, 46)
-                    .background(Color(.systemGray6))
-                    .font(.custom("Rubik-Regular", size: 18))
+        
+        NavigationView{
+            VStack{
+                Image("background")
+                    .resizable()
+                    .edgesIgnoringSafeArea(.top)
+                    .frame(height: 188)
+                
+                HStack {
+                    TextField("Pesquise por empresa", text: $text)
+                        .frame(height: 48)
+                        .cornerRadius(4)
+                        .padding(.horizontal, 46)
+                        .background(Color(.systemGray6))
+                        .font(.custom("Rubik-Regular", size: 18))
+                        
+                        .overlay(
+                            Image(systemName: "magnifyingglass")
+                                .foregroundColor(.gray)
+                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                                .padding(.leading, 16)
+                        )
+                }
+                .onAppear(perform: loadData)
+                .padding(.horizontal, 16)
+                .padding(.top, -30)
+                
+                if enterprises.filter({"\($0)".contains(text) || text.isEmpty}).count == 0{
                     
-                    .overlay(
-                        Image(systemName: "magnifyingglass")
-                            .foregroundColor(.gray)
-                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading, 16)
-                    )
-            }
-            .padding(.horizontal, 16)
-            .padding(.top, -30)
-            
-            
-            HStack{
-                Text("\(enterprises.filter({"\($0)".contains(text) || text.isEmpty}).count) resultados encontrados")
-                    .font(.custom("Rubik-Regular", size: 14))
-                    .foregroundColor(Color(labelLoginColor))
-                    .padding()
+                    Spacer()
+                    
+                    Text("Nenhum Resultado Encontrado")
+                        .font(.custom("Rubik-Regular", size: 18))
+                        .foregroundColor(Color(labelLoginColor))
+                    
+                }else{
+                    HStack{
+                        Text("\(enterprises.filter({"\($0.enterprise_name)".contains(text) || text.isEmpty}).count) resultados encontrados")
+                            .font(.custom("Rubik-Regular", size: 14))
+                            .foregroundColor(Color(labelLoginColor))
+                            .padding()
+                        
+                        Spacer()
+                    }
+                    
+                    
+                    List{
+                        ForEach(enterprises.filter({"\($0.enterprise_name)".contains(text) || text.isEmpty}), id: \.self){ enterprise in
+                            
+                            NavigationLink(destination: NewView()) {
+                                
+                                Rectangle()
+                                    .frame(height: 120)
+                                    .cornerRadius(4)
+                                    .foregroundColor(Color(enterpriseFirstColor))
+                                    .overlay(
+                                        Text(enterprise.enterprise_name)
+                                            .foregroundColor(.white)
+                                            .font(.custom("Rubik-Regular", size: 18))
+                                    )
+                                    .padding(.horizontal)
+                            }.padding(.trailing, -24.0)
+                            
+                        }
+                    }
+                    
+                    Spacer()
+                    
+                }
+                
                 
                 Spacer()
+                
             }
             
-            
-            List{
-                ForEach(enterprises.filter({"\($0)".contains(text) || text.isEmpty}), id: \.self){ enterprise in
-                    
-                    Rectangle()
-                        .frame(height: 120)
-                        .cornerRadius(4)
-                        .foregroundColor(Color(enterpriseFirstColor))
-                        .overlay(
-                            Text(enterprise.enterprise_name)
-                                .foregroundColor(.white)
-                                .font(.custom("Rubik-Regular", size: 18))
-                        )
-                        .padding(.horizontal)
-                }
-            }.onAppear(perform: loadData)
-            
-            Spacer()
-            
+            .navigationBarHidden(true)
         }
-
     }
+    
     
     func loadData(){
         
