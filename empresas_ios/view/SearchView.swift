@@ -12,36 +12,27 @@ struct SearchView: View {
     var user: User
     @State var enterprises = [Enterprise]()
     @State var textSearch: String = ""
-    @State private var isEditing = false
     
     var body: some View {
-        
-        
+   
         NavigationView{
             VStack{
-                
-                if isEditing{
-                    BackgroundSearchView(height: 67)
-                }else{
-                    BackgroundSearchView(height: 188)
-                }
-                
+        
+                BackgroundSearchView(height: 100)
+
                 HStack {
-                    TextField("Pesquise por empresa", text: $textSearch){
-                        isEditing in
-                        self.isEditing = true
-                    }
-                    .frame(height: 48)
-                    .cornerRadius(4)
-                    .padding(.horizontal, 46)
-                    .background(Color(.systemGray6))
-                    .font(.custom("Rubik-Regular", size: 18))
-                    .overlay(
-                        Image(systemName: "magnifyingglass")
-                            .foregroundColor(.gray)
-                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                            .padding(.leading, 16)
-                    )
+                    TextField("Pesquise por empresa", text: $textSearch)
+                        .frame(height: 48)
+                        .cornerRadius(4)
+                        .padding(.horizontal, 46)
+                        .background(Color(.systemGray6))
+                        .font(.custom("Rubik-Regular", size: 18))
+                        .overlay(
+                            Image(systemName: "magnifyingglass")
+                                .foregroundColor(.gray)
+                                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                                .padding(.leading, 16)
+                        )
                 }
                 .onAppear(perform: loadData)
                 .padding(.horizontal, 16)
@@ -70,8 +61,10 @@ struct SearchView: View {
                         ForEach(enterprises.filter({"\($0.enterprise_name)".contains(textSearch) || textSearch.isEmpty}), id: \.self){ enterprise in
                             
                             NavigationLink(destination: DetailsView(enterpriseName: enterprise.enterprise_name, description: enterprise.description)) {
+                                
                                 EnterpriseView(enterpriseName: enterprise.enterprise_name)
                                     .padding(.horizontal)
+                                
                             }.padding(.trailing, -24.0)
                             
                         }

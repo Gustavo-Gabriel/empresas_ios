@@ -21,7 +21,7 @@ struct FormLoginView: View {
     var body: some View {
         
         var user = User(uid: "", token: "", client: "")
-        
+
         Group{
             HStack{
                 Text("Email")
@@ -51,9 +51,7 @@ struct FormLoginView: View {
                         BorderTextFieldView()
                     )
             }
-            
-            
-            
+
             HStack{
                 Text("Senha")
                     .font(.custom("Rubik-Regular", size: 14))

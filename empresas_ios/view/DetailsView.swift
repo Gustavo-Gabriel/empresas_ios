@@ -37,7 +37,6 @@ struct DetailsView: View {
                     .padding()
             }
             
-            
             Spacer()
         }
         .navigationBarTitle(enterpriseName, displayMode: .inline)

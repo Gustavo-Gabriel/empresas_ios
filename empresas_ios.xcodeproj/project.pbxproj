@@ -26,7 +26,6 @@
 		F158573025C09A7F00E54A90 /* empresas_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158572F25C09A7F00E54A90 /* empresas_iosTests.swift */; };
 		F158573B25C09A7F00E54A90 /* empresas_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158573A25C09A7F00E54A90 /* empresas_iosUITests.swift */; };
 		F158574C25C0BAAB00E54A90 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158574B25C0BAAB00E54A90 /* Colors.swift */; };
-		F158575325C0CB7700E54A90 /* NewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158575225C0CB7700E54A90 /* NewView.swift */; };
 		F16C979E25C2EC6E00F0C2A6 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C979D25C2EC6E00F0C2A6 /* SplashScreenView.swift */; };
 		F16C97A325C2F51500F0C2A6 /* BackgroundSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C97A225C2F51500F0C2A6 /* BackgroundSearchView.swift */; };
 /* End PBXBuildFile section */
@@ -74,7 +73,6 @@
 		F158573A25C09A7F00E54A90 /* empresas_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = empresas_iosUITests.swift; sourceTree = "<group>"; };
 		F158573C25C09A7F00E54A90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F158574B25C0BAAB00E54A90 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		F158575225C0CB7700E54A90 /* NewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewView.swift; sourceTree = "<group>"; };
 		F16C979D25C2EC6E00F0C2A6 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		F16C97A225C2F51500F0C2A6 /* BackgroundSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundSearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,6 +105,8 @@
 		F144802025C1F0CC0041AC5B /* model */ = {
 			isa = PBXGroup;
 			children = (
+				F144803225C1F47A0041AC5B /* User.swift */,
+				F144801B25C1F0C70041AC5B /* Enterprise.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -155,15 +155,13 @@
 		F158571C25C09A7E00E54A90 /* empresas_ios */ = {
 			isa = PBXGroup;
 			children = (
+				F16C97AA25C3026B00F0C2A6 /* util */,
 				F144802025C1F0CC0041AC5B /* model */,
 				F151315625C19B21003E4F2F /* services */,
-				F158574B25C0BAAB00E54A90 /* Colors.swift */,
-				F144801B25C1F0C70041AC5B /* Enterprise.swift */,
 				F158575125C0CB5F00E54A90 /* view */,
 				F158572125C09A7E00E54A90 /* Assets.xcassets */,
 				F158572625C09A7E00E54A90 /* Info.plist */,
 				F158572325C09A7E00E54A90 /* Preview Content */,
-				F144803225C1F47A0041AC5B /* User.swift */,
 			);
 			path = empresas_ios;
 			sourceTree = "<group>";
@@ -200,7 +198,6 @@
 				F151317025C1C15E003E4F2F /* view_util */,
 				F158571D25C09A7E00E54A90 /* empresas_iosApp.swift */,
 				F158571F25C09A7E00E54A90 /* ContentView.swift */,
-				F158575225C0CB7700E54A90 /* NewView.swift */,
 				F151314925C1995B003E4F2F /* FormLoginView.swift */,
 				F151314E25C19AAA003E4F2F /* HeaderLoginView.swift */,
 				F144801625C1E5F30041AC5B /* SearchView.swift */,
@@ -208,6 +205,14 @@
 				F16C979D25C2EC6E00F0C2A6 /* SplashScreenView.swift */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		F16C97AA25C3026B00F0C2A6 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				F158574B25C0BAAB00E54A90 /* Colors.swift */,
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,7 +349,6 @@
 				F144802E25C1F3D50041AC5B /* EnterprisesService.swift in Sources */,
 				F151316025C19B8A003E4F2F /* URL.swift in Sources */,
 				F151314525C198EE003E4F2F /* CurvedSideRectangle.swift in Sources */,
-				F158575325C0CB7700E54A90 /* NewView.swift in Sources */,
 				F144801C25C1F0C70041AC5B /* Enterprise.swift in Sources */,
 				F144803325C1F47A0041AC5B /* User.swift in Sources */,
 				F158574C25C0BAAB00E54A90 /* Colors.swift in Sources */,
